@@ -2,7 +2,7 @@ import signale from 'signale'
 
 import { ServerInstance } from './server'
 
-export class ServerRuntime extends ServerInstance {
+class ServerRuntime extends ServerInstance {
 	/** Runs application on dedidacted port */
 	public launchup() {
 		this.core.listen(process.env.API_PORT || 3600, () => {

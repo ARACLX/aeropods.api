@@ -2,21 +2,19 @@ import { config } from 'dotenv'
 import path from 'path'
 import signale from 'signale'
 
-config({
-	path: path.resolve(__dirname, '..', '..', '..', '..', '.env'),
-})
+config()
 
 let { MONGODB_URL, JWT_SECRET, NODE_ENV } = process.env
 
-// Falback resolve of JWT Secret, usually used for testing and development enviroment.
+
 if (!JWT_SECRET && NODE_ENV !== 'production') {
 	JWT_SECRET = 'unsecureJWT'
-	signale.log("Fallbacked JWT_SECRET to unsecureJWT")
+	signale.info("DotENV: JWT_SECRET = unsecureJWT")
 }
 
 if (!MONGODB_URL && NODE_ENV !== 'production') {
-	MONGODB_URL = 'unsecureJWT'
-	signale.log("Fallbacked MONGODB_URL to docker address.")
+	MONGODB_URL = 'mongodb://mongo:27017'
+	signale.info("DotENV: MONGODB_URL = mongodb://mongo:27017")
 }
 
 export { MONGODB_URL, JWT_SECRET, NODE_ENV }

@@ -18,7 +18,7 @@ export class ServerInstance {
 		this.core = express()
 		this.middleware()
 		this.routes()
-		this.database()
+		// this.database()
 	}
 
 	/* Middleware of server */
