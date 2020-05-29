@@ -1,17 +1,45 @@
 version: 2.1
 orbs:
-  node: circleci/node@1.1.6
+  node: circleci/node@2.0.3
 jobs:
-  build-and-test:
-    executor:
-      name: node/default
+  build:
+    executor: node/default
+    working_directory: ~/aeropods
     steps:
       - checkout
-      - node/with-cache:
-          steps:
-            - run: npm install
-            - run: npm test:unit
+      - run:
+          name: Node.js Version
+          command: node --version
+      - run:
+          name: Yarn Version
+          command: yarn --version
+      - node/install-packages:
+          cache-key: yarn.lock
+          pkg-manager: yarn
+          with-cache: true
+          cache-version: v1
+          app-dir: ~/aeropods
+      - run:
+          name: Build Package
+          command: yarn run build
+  test:
+    executor: node/default
+    working_directory: ~/aeropods
+    steps:
+      - checkout
+      - node/install-packages:
+          cache-key: yarn.lock
+          pkg-manager: yarn
+          with-cache: true
+          cache-version: v1
+          app-dir: ~/aeropods
+      - run:
+          name: Perform unit tests
+          command: yarn run test:unit
+
 workflows:
-    build-and-test:
-      jobs:
-        - build-and-test
+  version: 2
+  development:
+    jobs:
+      - build
+      - test
