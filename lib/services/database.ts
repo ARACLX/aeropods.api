@@ -8,6 +8,7 @@ export class Database {
 		this.mongo()
 	}
 
+	// HACK: AER-2 Needs some tests but genrally it's completed.
 	/* Implementation of Mongoose as a database controller */
 	public mongo(): void {
 		const connection = mongoose.connection
