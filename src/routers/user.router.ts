@@ -10,10 +10,10 @@ export class UserRouter {
 		this.routes()
 	}
 	routes() {
-		this.router.get('/', this.controller.getUsers)
+		this.router.get('/', this.controller.allUsers)
 		this.router.get('/:id', this.controller.getUser)
 		this.router.post('/', this.controller.createUser)
-		this.router.patch('/:id', this.controller.patchUser)
+		this.router.patch('/:id', this.controller.updateUser)
 		this.router.delete('/:id', this.controller.deleteUser)
 	}
 }

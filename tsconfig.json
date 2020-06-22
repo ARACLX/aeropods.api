@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"target": "ESNEXT",
+		"target": "es2015",
 		"outDir": "dist/main",
 		//		"rootDir": "lib",
 		"moduleResolution": "node",
@@ -21,32 +21,25 @@
 		"alwaysStrict": false,
 
 		/* Additional Checks */
-		// "noUnusedLocals": true,
-		// "noUnusedParameters": true,
-		// "noImplicitReturns": true,
-		// "noFallthroughCasesInSwitch": true,
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
+		"noImplicitReturns": false,
+		"noFallthroughCasesInSwitch": false,
 
 		/* Debugging Options */
 		"traceResolution": false,
 		"listEmittedFiles": false,
 		"listFiles": false,
-		"pretty": true,
+		"pretty": false,
 
 		/* Experimental Options */
 		"experimentalDecorators": true,
 		"emitDecoratorMetadata": true,
 
-		"lib": [
-			"es2017",
-			"ES2015",
-			"es2015.promise",
-			"DOM",
-			"ScriptHost",
-			"esnext.asynciterable"
-		]
+		"lib": ["es2017", "ES2015", "es2015.promise", "esnext.asynciterable"]
 	},
 
-	//	"include": ["lib/**/*.ts"],
+	"include": ["src/**/*.ts"],
 	"exclude": ["node_modules/**"],
 	"compileOnSave": false
 }
