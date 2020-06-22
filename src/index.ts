@@ -4,8 +4,9 @@ import compression from 'compression'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import morgan from 'morgan'
+import cookieParser from 'cookie-parser'
 
-import { DefaultRouter, UserRouter, AuthRouter } from './routers'
+import { DefaultRouter, UserRouter } from './routers'
 
 /** Main server class. */
 export class ServerInstance {
@@ -25,6 +26,7 @@ export class ServerInstance {
 		this.core.use(bodyParser.urlencoded({ extended: false }))
 		this.core.use(compression())
 		this.core.use(cors())
+		this.core.use(cookieParser())
 		this.core.use(morgan('dev'))
 	}
 
@@ -32,6 +34,5 @@ export class ServerInstance {
 	public routes(): void {
 		this.core.use('/', new DefaultRouter().router)
 		this.core.use('/user', new UserRouter().router)
-		this.core.use('/auth', new AuthRouter().router)
 	}
 }

@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from 'express'
 import { verify, sign } from 'jsonwebtoken'
 import { JWT_SECRET } from '../utils'
 
+// TODO: JWT Middleware crashes.
 export function JWT(req: Request, res: Response, next: NextFunction) {
 	const token = req.headers.authorization
 	let payload
