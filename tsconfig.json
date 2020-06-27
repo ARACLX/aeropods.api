@@ -39,7 +39,7 @@
 		"lib": ["es2017", "ES2015", "es2015.promise", "esnext.asynciterable"]
 	},
 
-	"include": ["src/**/*.ts"],
+	// "include": ["src/**/*.ts"],
 	"exclude": ["node_modules/**"],
 	"compileOnSave": false
 }

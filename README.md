@@ -1,4 +1,4 @@
-# `@aeropod/api`
+# @aeropod/api
 
 Package that holds an `express`-based Node.js application.
 
@@ -12,6 +12,7 @@ local machine for development and testing purposes.
 ```
 #!/bin/bash
 Node@v13.x.x
+Docker@2.3.x
 ```
 
 ### Installing
@@ -22,6 +23,7 @@ A step by step series that will tell you how to get a development env running.
 #!/bin/bash
 $ git clone https://github.com/ARACLX/aeropods.git
 $ cd aeropods/packages/api
+$ yarn
 ```
 
 ### Scripts
@@ -30,8 +32,10 @@ $ cd aeropods/packages/api
 | :------- | :------------------------------------------------------------------------------ |
 | yarn dev | Starts a development server which have included automatic reolading by changes. |
 
-### Reqiurements
+### Reqiurement Specification
 
+- [ ] Application should perform CRUD operations on Users with usage of Prisma,
+      Mongoose and TypeORM.
 - [ ] Application should have protected routes in RBAC model powered by OAuth or
       JWT as a authorization method.
 - [ ] Users should be able to create their accounts.

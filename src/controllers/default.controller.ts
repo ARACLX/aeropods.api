@@ -3,8 +3,13 @@ import { PrismaClient } from '@prisma/client'
 
 export class DefaultController {
 	constructor() {}
-	public defaultFunction(req: Request, res: Response) {
-		res.json('Hello World')
+
+	defaultFunction(req: Request, res: Response) {
+		const pkg = require('../../package.json')
+		res.json({
+			name: pkg.name,
+			version: pkg.version,
+		})
 	}
 	public async createUser(req: Request, res: Response) {
 		const prisma = new PrismaClient()

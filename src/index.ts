@@ -3,8 +3,8 @@ import express from 'express'
 import compression from 'compression'
 import bodyParser from 'body-parser'
 import cors from 'cors'
-import morgan from 'morgan'
 import cookieParser from 'cookie-parser'
+import passport from 'passport'
 
 import { DefaultRouter, UserRouter } from './routers'
 
@@ -27,7 +27,7 @@ export class ServerInstance {
 		this.core.use(compression())
 		this.core.use(cors())
 		this.core.use(cookieParser())
-		this.core.use(morgan('dev'))
+		this.core.use(passport.initialize())
 	}
 
 	/* Routing contained in core */
