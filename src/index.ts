@@ -5,6 +5,7 @@ import bodyParser from 'body-parser'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import passport from 'passport'
+// import bugsnag from './services/bugsnag'
 
 import { DefaultRouter, UserRouter } from './routers'
 
@@ -18,10 +19,12 @@ export class ServerInstance {
 		this.core = express()
 		this.middleware()
 		this.routes()
+		this.errors()
 	}
 
 	/** Middleware of ServerInstance class */
 	public middleware(): void {
+		// this.core.use(bugsnag.requestHandler)
 		this.core.use(bodyParser.json())
 		this.core.use(bodyParser.urlencoded({ extended: false }))
 		this.core.use(compression())
@@ -34,5 +37,9 @@ export class ServerInstance {
 	public routes(): void {
 		this.core.use('/', new DefaultRouter().router)
 		this.core.use('/user', new UserRouter().router)
+	}
+
+	public errors() {
+		// this.core.use(bugsnag.requestHandler)
 	}
 }

@@ -11,11 +11,11 @@
 FROM node:alpine AS development
 
 # Container Metadata
-LABEL vendor = "Araclx Corporation"
-LABEL maintainer = "Jakub Olan <jakub.olan001@gmail.com>"
-LABEL name="aeroapi"
-LABEL version = "0.0.1"
-LABEL description = "API Server"
+LABEL com.araclx.aeroapi.vendor = "Araclx Corporation"
+LABEL com.araclx.aeroapi.maintainer = "Jakub Olan <jakub.olan001@gmail.com>"
+LABEL com.araclx.aeroapi.name="aeroapi"
+LABEL com.araclx.aeroapi.version = "0.0.1"
+LABEL com.araclx.aeroapi.description = "API Server"
 
 # Working Directory of container
 WORKDIR /usr/src/aeroapi

@@ -18,8 +18,12 @@ class DevelopmentInstance extends ServerInstance {
 	/** Development-specific middleware. */
 	public middleware(): void {
 		this.core.use(morgan('dev'))
+	}
+
+	public errors(): void {
 		this.core.use(errorhandler())
 	}
+
 	/** Development Runtime to run a server. */
 	public async runtime(): Promise<void> {
 		// Definition of preffered port.
@@ -31,7 +35,7 @@ class DevelopmentInstance extends ServerInstance {
 		// Listen function of a server.
 		this.core.listen(APP_PORT, function() {
 			// Printing Console Logo
-			CFonts.say('Aeroservv', {
+			CFonts.say('Aeroserv', {
 				gradient: false,
 				align: 'center',
 			})
