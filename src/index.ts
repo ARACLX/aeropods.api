@@ -8,6 +8,7 @@ import passport from 'passport'
 // import bugsnag from './services/bugsnag'
 
 import { DefaultRouter, UserRouter } from './routers'
+import { DatabaseService } from './services'
 
 /** Main server class. */
 export class ServerInstance {
@@ -20,6 +21,7 @@ export class ServerInstance {
 		this.middleware()
 		this.routes()
 		this.errors()
+		this.database()
 	}
 
 	/** Middleware of ServerInstance class */
@@ -41,5 +43,11 @@ export class ServerInstance {
 
 	public errors() {
 		// this.core.use(bugsnag.requestHandler)
+	}
+
+	public database() {
+		// Connection with TypeORM
+		// NOTE: Tested, works.
+		new DatabaseService().typeorm()
 	}
 }

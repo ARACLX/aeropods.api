@@ -2,11 +2,31 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-const JWT_SECRET = process.env.JWT_SECRET || 'unsecure'
-const HOST = process.env.HOST || 'localhost'
+// General Enviroment Configuration
+const HOST: string | number = process.env.HOST || 'localhost'
+const AEROSERV_PORT: number | string = process.env.AEROSERV_PORT
 
-const { AEROSERV_PORT } = process.env
+// CockroachDB Configuration
+const COCKROACH_HOST: string = process.env.COCKROACH_HOST || 'localhost'
+const COCKROACH_USERNAME: string = process.env.COCKROACH_USERNAME || 'root'
+const COCKROACH_PASSWORD: string = process.env.COCKROACH_PASSWORD || ''
+const COCKROACH_DATABASE: string = process.env.COCKROACH_DATABASE || 'defaultdb'
+const COCKROACH_PORT: number | string = process.env.COCKROACH_HOST || 26257
 
-const BUGSNAG_KEY = '24050181c9b6e6786c0de363bb4752c6'
+// Configuration of security
+const JWT_SECRET: string = process.env.JWT_SECRET || 'unsecure'
 
-export { JWT_SECRET, AEROSERV_PORT, HOST, BUGSNAG_KEY }
+// Configuration of infrastructure
+const BUGSNAG_KEY = ''
+
+export {
+	JWT_SECRET,
+	AEROSERV_PORT,
+	HOST,
+	BUGSNAG_KEY,
+	COCKROACH_HOST,
+	COCKROACH_USERNAME,
+	COCKROACH_PASSWORD,
+	COCKROACH_DATABASE,
+	COCKROACH_PORT,
+}

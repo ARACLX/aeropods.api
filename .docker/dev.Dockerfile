@@ -21,7 +21,7 @@ LABEL com.araclx.aeroapi.description = "API Server"
 WORKDIR /usr/src/aeroapi
 
 # Healthchecking to monitor application status
-HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD curl -f http://localhost:3600/ || exit 1
+HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD curl -v http://localhost:3600/ || exit 1
 
 # Container User with root permissions
 USER root
