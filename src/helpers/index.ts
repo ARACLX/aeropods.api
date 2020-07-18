@@ -1,3 +1,0 @@
-function isProduction() {}
-
-export {}
