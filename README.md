@@ -1,10 +1,6 @@
 # @aeropod/api
 
-Package that holds an `express`-based Node.js application.
-
-# PACKAGE IN IMPORTANT CHANGES
-
-@ziqiln fucked up code...
+Package that holds an `nest`-based Node.js application.
 
 ## Getting Started
 
