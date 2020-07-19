@@ -14,8 +14,8 @@
 	},
 	"author": "Jakub Olan <jakub.olan001@gmail.com>",
 	"scripts": {
-		"build": "ncc build ./src/index.ts -o dist",
-		"dev": "ts-node-dev --watch --clear ./src/__dev__.ts"
+		"notbuild": "ncc build ./src/index.ts -o dist",
+		"notdev": "ts-node-dev --watch --clear ./src/__dev__.ts"
 	},
 	"devDependencies": {
 		"lerna": "^3.22.1",
