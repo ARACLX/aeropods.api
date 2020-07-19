@@ -1,16 +1,23 @@
 {
 	"name": "@aeropods/api",
 	"version": "0.0.1",
+	"private": true,
+	"description": "Production-ready RESTful API boilerplate based on TypeScript language and Fastify library (including GraphQL) with MongoDB as a database.",
 	"license": "MIT",
+	"homepage": "https://github.com/araclx/aeropods",
+	"bugs": {
+		"url": "https://github.com/aralcx/aeropods/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/aralcx/aeropods.api.git"
+	},
+	"author": "Jakub Olan <jakub.olan001@gmail.com>",
 	"scripts": {
 		"build": "ncc build ./src/index.ts -o dist",
-		"dev": "ts-node-dev --watch --clear ./src/__dev__.ts",
-		"prisma:generate": "prisma generate",
-		"test": "ava"
-	},
-	"dependencies": {
+		"dev": "ts-node-dev --watch --clear ./src/__dev__.ts"
 	},
 	"devDependencies": {
-
+		"lerna": "^3.22.1"
 	}
 }
