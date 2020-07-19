@@ -14,10 +14,21 @@
 	},
 	"author": "Jakub Olan <jakub.olan001@gmail.com>",
 	"scripts": {
+		"prod": "node dist/index.js",
+		"start": "yarn build && yarn prod",
 		"build": "ncc build ./src/index.ts -o dist",
-		"dev": "ts-node-dev --watch --clear ./src/__dev__.ts"
+		"notdev": "ts-node-dev --watch --clear ./src/__dev__.ts"
 	},
 	"devDependencies": {
-		"lerna": "^3.22.1"
+		"@zeit/ncc": "^0.22.3",
+		"lerna": "^3.22.1",
+		"ts-node": "^8.10.2"
+	},
+	"dependencies": {
+		"express": "^4.17.1"
+	},
+	"engines": {
+		"node": "12.x",
+		"yarn": "1.x"
 	}
 }
