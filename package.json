@@ -14,10 +14,13 @@
 	},
 	"author": "Jakub Olan <jakub.olan001@gmail.com>",
 	"scripts": {
-		"notbuild": "ncc build ./src/index.ts -o dist",
+		"prod": "node dist/index.js",
+		"start": "yarn build && yarn prod",
+		"build": "ncc build ./src/index.ts -o dist",
 		"notdev": "ts-node-dev --watch --clear ./src/__dev__.ts"
 	},
 	"devDependencies": {
+		"@zeit/ncc": "^0.22.3",
 		"lerna": "^3.22.1",
 		"ts-node": "^8.10.2"
 	},
