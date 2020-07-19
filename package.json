@@ -18,6 +18,10 @@
 		"dev": "ts-node-dev --watch --clear ./src/__dev__.ts"
 	},
 	"devDependencies": {
-		"lerna": "^3.22.1"
+		"lerna": "^3.22.1",
+		"ts-node": "^8.10.2"
+	},
+	"dependencies": {
+		"express": "^4.17.1"
 	}
 }
