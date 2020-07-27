@@ -1,45 +1,22 @@
 {
-	"compilerOptions": {
-		"target": "es2015",
-		"outDir": "dist/main",
-		//		"rootDir": "lib",
-		"moduleResolution": "node",
-		"module": "commonjs",
-
-		"declaration": false,
-		"inlineSourceMap": true,
-		"esModuleInterop": true,
-
-		"strict": false,
-
-		/* Strict Type-Checking Options */
-		"noImplicitAny": false,
-		"strictNullChecks": false,
-		"strictFunctionTypes": false,
-		"strictPropertyInitialization": false,
-		"noImplicitThis": false,
-		"alwaysStrict": false,
-
-		/* Additional Checks */
-		"noUnusedLocals": false,
-		"noUnusedParameters": false,
-		"noImplicitReturns": false,
-		"noFallthroughCasesInSwitch": false,
-
-		/* Debugging Options */
-		"traceResolution": false,
-		"listEmittedFiles": false,
-		"listFiles": false,
-		"pretty": false,
-
-		/* Experimental Options */
-		"experimentalDecorators": true,
-		"emitDecoratorMetadata": true,
-
-		"lib": ["es2017", "ES2015", "es2015.promise", "esnext.asynciterable"]
-	},
-
-	// "include": ["src/**/*.ts"],
-	"exclude": ["node_modules/**"],
-	"compileOnSave": false
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./src",
+    "incremental": true,
+    "paths": {
+      "@modules/*": ["modules/*"],
+      "@services/*": ["services/*"],
+      "@controllers/*": ["controllers/*"],
+      "@interfaces/*": ["interfaces/*"],
+      "@schemas/*": ["schemas/*"]
+    }
+  }
 }

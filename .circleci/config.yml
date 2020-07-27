@@ -1,6 +1,7 @@
 version: 2.1
 orbs:
   node: circleci/node@2.0.3
+  docker: circleci/docker@1.0.1
 jobs:
   build:
     executor: node/default
@@ -13,33 +14,26 @@ jobs:
       - run:
           name: Yarn Version
           command: yarn --version
+      - run:
+          name: Install Lerna
+          command: yarn global add lerna
       - node/install-packages:
           cache-key: yarn.lock
           pkg-manager: yarn
           with-cache: true
           cache-version: v1
           app-dir: ~/aeropods
+      - run:
+          name: Bootstrap packages
+          command: lerna bootstrap
       - run:
           name: Build Package
           command: yarn run build
-  test:
-    executor: node/default
-    working_directory: ~/aeropods
-    steps:
-      - checkout
-      - node/install-packages:
-          cache-key: yarn.lock
-          pkg-manager: yarn
-          with-cache: true
-          cache-version: v1
-          app-dir: ~/aeropods
-      - run:
-          name: Perform unit tests
-          command: yarn run test:unit
-
+  # TODO: Lerna-based Test Workflow
+  # TODO: Automatic Release based on commit for prod branches (npm, dockerhub, github)
+  # TODO: Matrix Testing
 workflows:
   version: 2
   development:
     jobs:
       - build
-      - test
