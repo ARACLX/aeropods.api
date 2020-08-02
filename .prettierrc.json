@@ -1,9 +1,1 @@
-{
-	"bracketSpacing": true,
-	"useTabs": true,
-	"trailingComma": "es5",
-	"semi": false,
-	"proseWrap": "always",
-	"printWidth": 80,
-  "singleQuote": true
-}
+"@araclx/prettier-config"

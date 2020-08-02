@@ -1,6 +1,0 @@
-coverage
-.nyc_output
-.prettierrc.json
-Procfile
-yarn-error.log
-.DS_Store
